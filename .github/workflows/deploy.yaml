@@ -44,4 +44,4 @@ jobs:
         run: pnpm install
 
       - name: Deploy
-        run: sst deploy --stage ${{ github.ref_name }}
+        run: pnpm deploy

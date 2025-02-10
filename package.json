@@ -12,7 +12,7 @@
 		"lint": "eslint . && prettier --check .",
 		"prepare": "svelte-kit sync || echo ''",
 		"preview": "vite preview",
-		"deploy": "sst deploy --stage --"
+		"deploy": "sst deploy --stage main"
 	},
 	"devDependencies": {
 		"@eslint/compat": "^1.2.5",

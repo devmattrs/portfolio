@@ -19,7 +19,7 @@ pnpm sst deploy --stage ${{ github.ref_name }}
 > [!IMPORTANT]
 > This section requires a local [AWS CLI setup](https://docs.aws.amazon.com/cli/latest/userguide/getting-started-install.html) and the neccesary permissions to create IAM roles and policies.
 
-Set the following environment variables in a root `.env` file:
+Set the following environment variables in a root `.github.env` file:
 
 ``` bash
 ASSUME_ROLE_NAME=GithubDeploy

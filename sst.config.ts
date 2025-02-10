@@ -5,7 +5,7 @@ export default $config({
 		return {
 			name: "portfolio",
 			removal: input?.stage === "main" ? "retain" : "remove",
-			protect: ["main"].includes(input?.stage),
+			// protect: ["main"].includes(input?.stage),
 			home: "aws",
 			providers: process.env.AWS_PROFILE ? {
 				aws: {

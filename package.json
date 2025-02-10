@@ -40,8 +40,5 @@
 			"esbuild"
 		]
 	},
-	"dependencies": {
-		"sst": "latest",
-		"svelte-kit-sst": "latest"
-	}
+	"dependencies": {}
 }

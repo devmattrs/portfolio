@@ -7,7 +7,7 @@ aws iam create-open-id-connect-provider \
   --thumbprint-list 6938fd4d98bab03faadb97b34396831e3780aea1
 
 # Read environment variables
-source .env
+source .github.env
 
 # Create the role with the trust policy thats in the file trust-policy.json
 

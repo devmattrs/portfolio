@@ -44,4 +44,4 @@ jobs:
         run: pnpm install
 
       - name: Deploy
-        run: pnpm run deploy
+        run: pnpm run deploy ${{ github.ref_name }}

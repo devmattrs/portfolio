@@ -14,8 +14,12 @@ jobs:
   build:
     name: Build & Deploy
     runs-on: ubuntu-latest
-
-
+    
+    # Add permissions for the OIDC token
+    permissions:
+      id-token: write
+      contents: read
+    
     steps:
       - name: Checkout repository
         uses: actions/checkout@v3
@@ -47,9 +51,11 @@ jobs:
       - name: Install dependencies
         run: pnpm install
 
+      - name: Configure AWS Credentials
+        uses: aws-actions/configure-aws-credentials@v4
+        with:
+          role-to-assume: arn:aws:iam::${{ secrets.AWS_ACCOUNT_ID }}:role/${{ secrets.AWS_ROLE_NAME }}
+          aws-region: us-east-1
+
       - name: Deploy
-        env:
-          AWS_ACCESS_KEY_ID: ${{ secrets.AWS_ACCESS_KEY_ID }}
-          AWS_SECRET_ACCESS_KEY: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
-          AWS_SESSION_TOKEN: ${{ secrets.AWS_SESSION_TOKEN }}
         run: pnpm run sst deploy --stage ${{ github.ref_name }}

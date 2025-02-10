@@ -7,6 +7,11 @@ export default $config({
 			removal: input?.stage === "main" ? "retain" : "remove",
 			protect: ["main"].includes(input?.stage),
 			home: "aws",
+			providers: {
+				aws: {
+					profile: 'mattrs',
+				},
+			},
 		};
 	},
 	async run() {

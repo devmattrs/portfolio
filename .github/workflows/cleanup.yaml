@@ -1,0 +1,37 @@
+name: Deploy
+
+on:
+  delete:
+
+
+jobs:
+  build:
+    name: Build & Deploy
+    runs-on: ubuntu-latest
+    
+    # Add permissions for the OIDC token
+    permissions:
+      id-token: write
+      contents: read
+    
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '18'
+
+      - name: Install SST 
+        run: npm install -g sst@latest
+
+      - name: configure aws credentials
+        uses: aws-actions/configure-aws-credentials@v4
+        with:
+          role-to-assume: arn:aws:iam::${{ secrets.AWS_ACCOUNT_ID }}:role/GithubDeploy
+          role-session-name: deploysession
+          aws-region: us-east-1
+
+      - name: Deploy
+        run: npm run sst remove ${{ github.ref_name }}

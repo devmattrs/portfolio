@@ -51,10 +51,11 @@ jobs:
       - name: Install dependencies
         run: pnpm install
 
-      - name: Configure AWS Credentials
+      - name: configure aws credentials
         uses: aws-actions/configure-aws-credentials@v4
         with:
           role-to-assume: arn:aws:iam::${{ secrets.AWS_ACCOUNT_ID }}:role/GithubDeploy
+          role-session-name: deploysession
           aws-region: us-east-1
 
       - name: Deploy

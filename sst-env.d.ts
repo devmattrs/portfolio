@@ -5,6 +5,10 @@
 
 declare module "sst" {
   export interface Resource {
+    "Portfolio": {
+      "type": "sst.aws.SvelteKit"
+      "url": string
+    }
   }
 }
 /// <reference path="sst-env.d.ts" />

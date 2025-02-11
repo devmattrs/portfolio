@@ -70,11 +70,10 @@
 						target="_blank"
 						class="text-secondary-foreground mb-2 text-xl font-bold"
 					>
-						{project.title}
+						<span class="text-secondary-foreground/50">View Project</span>
 					</a>
-				{:else}
-					<h3 class="text-secondary-foreground mb-2 text-xl font-bold">{project.title}</h3>
 				{/if}
+				<h3 class="text-secondary-foreground mb-2 text-xl font-bold">{project.title}</h3>
 				<p class="text-muted-foreground mb-4">{@html project.description}</p>
 				<div class="flex flex-wrap gap-2">
 					{#each project.tags as tag}

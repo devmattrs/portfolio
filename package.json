@@ -45,6 +45,7 @@
 		]
 	},
 	"dependencies": {
-		"@lottiefiles/dotlottie-svelte": "^0.4.6"
+		"@lottiefiles/dotlottie-svelte": "^0.4.6",
+		"@vercel/analytics": "^1.5.0"
 	}
 }

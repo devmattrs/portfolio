@@ -3,6 +3,10 @@
 	import Button from '$lib/components/button.svelte';
 	import Sun from '$lib/components/icons/sun.svelte';
 	import Moon from '$lib/components/icons/moon.svelte';
+	import { dev } from '$app/environment';
+	import { injectAnalytics } from '@vercel/analytics/sveltekit';
+
+	injectAnalytics({ mode: dev ? 'development' : 'production' });
 
 	import '../app.css';
 

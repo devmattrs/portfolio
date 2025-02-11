@@ -6,6 +6,8 @@
 
 	import '../app.css';
 
+	let { children } = $props();
+
 	let theme = $state('dark');
 
 	onMount(() => {
@@ -53,4 +55,4 @@
 	{/if}
 </Button>
 
-<slot />
+{@render children()}

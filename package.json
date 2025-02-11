@@ -40,5 +40,7 @@
 			"esbuild"
 		]
 	},
-	"dependencies": {}
+	"dependencies": {
+		"@lottiefiles/dotlottie-svelte": "^0.4.6"
+	}
 }

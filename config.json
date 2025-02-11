@@ -1,0 +1,17 @@
+{
+	"name": "Mattrs",
+	"description": "This is my personal portfolio website that displays my work,projects, and experience",
+	"aesthetics": {
+		"primary": "#000000",
+		"secondary": "#111111",
+		"light": "#494949",
+		"lighter": "#7c7a7a",
+		"accent": "#ff5d73"
+	},
+	"fonts": [
+		{
+			"name": "Proxima Nova",
+			"url": "https://fonts.googleapis.com/css2?family=Proxima+Nova:wght@100;200;300;400;500;600;700;800;900&display=swap"
+		}
+	]
+}

@@ -5,7 +5,7 @@
 	import Companies from './components/Companies.svelte';
 </script>
 
-<main class="relative z-10 min-h-screen px-4 py-8 md:px-8 max-w-6xl mx-auto">
+<main class="border-border relative z-10 mx-auto min-h-screen max-w-6xl px-4 py-8 md:px-8">
 	<Hero />
 	<Services />
 	<Projects />

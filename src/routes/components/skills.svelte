@@ -36,7 +36,7 @@
 <section class="py-20">
 	<h2 class="text-secondary-foreground mb-12 text-4xl font-bold">Skills</h2>
 
-	<div class="grid grid-cols-1 gap-8 md:grid-cols-2 lg:grid-cols-3">
+	<div class="grid grid-cols-1 gap-8 md:grid-cols-2">
 		{#each services as service}
 			<div class="rounded-xl py-6 pr-6 backdrop-blur-sm transition-colors">
 				<div class="mb-4 text-4xl">{service.icon}</div>

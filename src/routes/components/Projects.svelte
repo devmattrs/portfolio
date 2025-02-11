@@ -1,25 +1,25 @@
 <script lang="ts">
 	const projects = [
 		{
-			title: 'R.A.G. Chat Application',
+			title: 'Strukt Chat Application',
 			description:
 				'A proof-of-concept chat application leveraging RAG (Retrieval-Augmented Generation) with Neo4j knowledge graph and OpenAI integration. Features OAuth2 authentication and intelligent query processing.',
-			image: 'https://images.unsplash.com/photo-1677442136019-21780ecad995',
+			image: '/strukt-chat.png',
 			tags: ['Next.js', 'Neo4j', 'OpenAI', 'FastAPI', 'OAuth2']
 		},
 		{
-			title: 'Strukt',
+			title: 'Strukt Marketing',
 			description:
-				'A comprehensive web application maintenance platform featuring automated deployments, invoicing, and custom mailing solutions. Built with enterprise-grade infrastructure and payment processing.',
+				'A comprehensive web application platform featuring automated deployments, invoicing, and custom mailing solutions. Built with enterprise-grade infrastructure and payment processing.',
 			image: '/strukt.png',
-			tags: ['Next.js', 'Golang', 'Terraform', 'AWS', 'Stripe'],
+			tags: ['Next.js', 'TS', 'Github Actions', 'AWS', 'Stripe'],
 			link: 'https://strukt.io'
 		},
 		{
 			title: 'Enterprise Data Pipeline',
 			description:
 				'Led migration from SSMS to a modern data pipeline, enabling process codification and automated scaling. Transformed XML-based workflows into maintainable, monitored processes.',
-			image: 'https://images.unsplash.com/photo-1558494949-ef010cbdcc31',
+			image: '/datapipeline.png',
 			tags: ['Python', 'PostgreSQL', 'FastAPI', 'Docker']
 		},
 		{
@@ -33,25 +33,48 @@
 			title: 'SermonDone',
 			description:
 				'Innovative LLM-powered system that automates release note generation by analyzing git commits, PRs, and ticket data, significantly reducing engineering overhead.',
-			image:
-				'https://yt3.googleusercontent.com/xRzHwaQuYrg9O3wfj6t_JmCPe_xORuFFP9OvUIJot9J6uKX5sXITiS_sSJhoLxN0T1Pjp8PyJfQ=s160-c-k-c0x00ffffff-no-rj',
-			tags: ['Python', 'OpenAI', 'GitHub API', 'CI/CD']
+			tags: ['Python', 'OpenAI', 'GitHub API', 'CI/CD'],
+			link: 'https://www.sermondone.com/'
+		},
+		{
+			title: 'Exposure Essence',
+			description:
+				'A photography website for a local photographer. This is a complete overhaul of the existing website, with a cleaner design, better user experience, and cleaner galleries',
+			tags: ['Python', 'OpenAI', 'GitHub API', 'CI/CD'],
+			link: 'https://exposureessence.com'
 		}
 	];
 </script>
 
-<section class="py-20">
+<section id="projects" class="py-20">
 	<h2 class="text-secondary-foreground mb-12 text-4xl font-bold">Projects</h2>
 
 	<div class="grid grid-cols-1 gap-8 md:grid-cols-2">
 		{#each projects as project}
 			<div class="rounded-xl py-6 pr-6 backdrop-blur-sm transition-colors">
-				<img
-					src={project.image}
-					alt={project.title}
-					class="border-accent/30 mb-4 h-48 w-full rounded-xl border object-cover"
-				/>
-				<h3 class="text-secondary-foreground mb-2 text-xl font-bold">{project.title}</h3>
+				{#if project.link}
+					<div class="border-accent/30 mb-4 h-48 w-full overflow-hidden rounded-xl border">
+						<iframe src={project.link} title={project.title} class="h-full w-full" loading="lazy">
+						</iframe>
+					</div>
+				{:else}
+					<img
+						src={project.image}
+						alt={project.title}
+						class="border-accent/30 mb-4 h-48 w-full rounded-xl border object-cover"
+					/>
+				{/if}
+				{#if project.link}
+					<a
+						href={project.link}
+						target="_blank"
+						class="text-secondary-foreground mb-2 text-xl font-bold"
+					>
+						{project.title}
+					</a>
+				{:else}
+					<h3 class="text-secondary-foreground mb-2 text-xl font-bold">{project.title}</h3>
+				{/if}
 				<p class="text-muted-foreground mb-4">{@html project.description}</p>
 				<div class="flex flex-wrap gap-2">
 					{#each project.tags as tag}

@@ -1,4 +1,6 @@
 <script lang="ts">
+	import Arrow from '$lib/components/icons/arrow.svelte';
+
 	const scrollTo = (e: MouseEvent, id: string) => {
 		e.preventDefault();
 		const element = document.querySelector(id);
@@ -26,9 +28,22 @@
 			</a>
 			<a href="#projects" onclick={(e) => scrollTo(e, '#projects')}>
 				<button
-					class="border-accent text-accent-foreground hover:bg-accent/80 cursor-pointer rounded-lg border px-8 py-2 shadow-xs"
+					class="group border-accent text-accent-foreground flex cursor-pointer items-center gap-2 rounded-lg px-3 py-2 shadow-xs"
 				>
-					View Projects
+					Projects
+					<Arrow
+						class="stroke-accent-foreground h-5 w-5 rotate-0 transition-transform duration-300 group-hover:-rotate-45"
+					/>
+				</button>
+			</a>
+			<a href="#blog" onclick={(e) => scrollTo(e, '#blog')}>
+				<button
+					class="group border-accent text-accent-foreground flex cursor-pointer items-center gap-2 rounded-lg px-3 py-2 shadow-xs"
+				>
+					Blog
+					<Arrow
+						class="stroke-accent-foreground h-5 w-5 rotate-0 transition-transform duration-300 group-hover:-rotate-45"
+					/>
 				</button>
 			</a>
 		</div>

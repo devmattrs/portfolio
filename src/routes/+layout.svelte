@@ -90,7 +90,10 @@
 			rel="noopener noreferrer"
 			class="group relative transition-all duration-300 hover:scale-110"
 		>
-			<Button onclick={social.action ?? (() => {})} class="hover:bg-secondary/80 rounded-xl p-2">
+			<Button
+				onclick={social.action ?? (() => {})}
+				class="hover:bg-accent/10 text-accent-foreground rounded-xl p-2"
+			>
 				<social.icon class="h-5 w-5 transition-transform duration-300 group-hover:rotate-12" />
 			</Button>
 		</a>

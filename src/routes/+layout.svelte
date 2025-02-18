@@ -9,6 +9,8 @@
 	injectAnalytics({ mode: dev ? 'development' : 'production' });
 
 	import '../app.css';
+	import Youtube from '$lib/components/icons/youtube.svelte';
+	import X from '$lib/components/icons/x.svelte';
 
 	let { children } = $props();
 
@@ -51,12 +53,20 @@
 	<meta name="description" content="Full Stack Engineer and Developer portfolio" />
 </svelte:head>
 
-<Button class="bg-background fixed top-8 right-8 z-20 rounded-xl p-2" onclick={toggleTheme}>
-	{#if theme === 'light'}
-		<Sun />
-	{:else}
-		<Moon />
-	{/if}
-</Button>
+<div class="fixed top-8 right-8 z-20">
+	<Button class="rounded-xl p-2" onclick={toggleTheme}>
+		{#if theme === 'light'}
+			<Sun class="h-6 w-6" />
+		{:else}
+			<Moon class="h-6 w-6" />
+		{/if}
+	</Button>
+	<Button class="rounded-xl p-2">
+		<Youtube class="h-6 w-6" />
+	</Button>
+	<Button class="rounded-xl p-2">
+		<X class="h-5 w-5" />
+	</Button>
+</div>
 
 {@render children()}

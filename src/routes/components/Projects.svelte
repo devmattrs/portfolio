@@ -52,7 +52,7 @@
 	<div class="grid grid-cols-1 gap-8 md:grid-cols-2">
 		{#each projects as project}
 			<div class="rounded-xl py-6 pr-6 backdrop-blur-sm transition-colors">
-				{#if project.link}
+				<!-- {#if project.link}
 					<div class="border-accent/30 mb-4 h-48 w-full overflow-hidden rounded-xl border">
 						<iframe src={project.link} title={project.title} class="h-full w-full" loading="lazy">
 						</iframe>
@@ -63,17 +63,16 @@
 						alt={project.title}
 						class="border-accent/30 mb-4 h-48 w-full rounded-xl border object-cover"
 					/>
-				{/if}
-				{#if project.link}
-					<a
-						href={project.link}
-						target="_blank"
-						class="text-secondary-foreground mb-2 text-xl font-bold"
-					>
-						<span class="text-secondary-foreground/50">View Project</span>
-					</a>
-				{/if}
-				<h3 class="text-secondary-foreground mb-2 text-xl font-bold">{project.title}</h3>
+				{/if} -->
+
+				<div class="flex flex-row gap-5">
+					<h3 class="text-secondary-foreground mb-2 text-xl font-bold">{project.title}</h3>
+					{#if project.link}
+						<a href={project.link} target="_blank" class="text-secondary-foreground my-3 text-lg">
+							<span class="text-secondary-foreground/50"> -></span>
+						</a>
+					{/if}
+				</div>
 				<p class="text-muted-foreground mb-4">{@html project.description}</p>
 				<div class="flex flex-wrap gap-2">
 					{#each project.tags as tag}

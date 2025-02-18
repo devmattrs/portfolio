@@ -67,5 +67,5 @@
 
 <canvas
 	bind:this={canvas}
-	class="fixed inset-0 h-screen w-screen transition-colors duration-300 dark:opacity-10"
+	class="fixed inset-0 -z-10 h-screen w-screen transition-colors duration-300 dark:opacity-10"
 ></canvas>

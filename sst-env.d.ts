@@ -4,10 +4,19 @@
 /* deno-fmt-ignore-file */
 
 declare module "sst" {
-  export interface Resource {
-  }
+	export interface Resource {
+	}
 }
 /// <reference path="sst-env.d.ts" />
 
 import "sst"
-export {}
+export { }
+
+
+declare module '*.md' {
+	import type { SvelteComponent } from 'svelte'
+
+	export default class Comp extends SvelteComponent { }
+
+	export const metadata: Record<string, unknown>
+}

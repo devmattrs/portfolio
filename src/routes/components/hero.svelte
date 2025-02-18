@@ -16,18 +16,17 @@
 		<p class="text-muted-foreground mb-8 max-w-2xl text-xl md:text-2xl">
 			Fail fast, fail often, fail forward
 		</p>
-
 		<div class="flex gap-4">
 			<a href="mailto:matt@strukt.io">
 				<button
-					class="border-accent bg-accent/70 text-accent-foreground hover:bg-accent/80 rounded-lg border px-8 py-2 shadow-xs transition-colors"
+					class="border-accent bg-accent/70 text-accent-foreground hover:bg-accent/80 cursor-pointer rounded-lg border px-8 py-2 shadow-xs"
 				>
 					Get in touch
 				</button>
 			</a>
 			<a href="#projects" onclick={(e) => scrollTo(e, '#projects')}>
 				<button
-					class="border-accent text-accent-foreground hover:bg-accent/80 rounded-lg border px-8 py-2 shadow-xs transition-colors"
+					class="border-accent text-accent-foreground hover:bg-accent/80 cursor-pointer rounded-lg border px-8 py-2 shadow-xs"
 				>
 					View Projects
 				</button>

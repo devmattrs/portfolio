@@ -1,4 +1,6 @@
 <script lang="ts">
+	import Arrow from '$lib/components/icons/arrow.svelte';
+
 	const projects = [
 		{
 			title: 'Strukt Chat Application',
@@ -12,7 +14,7 @@
 			description:
 				'A comprehensive web application platform featuring automated deployments, invoicing, and custom mailing solutions. Built with enterprise-grade infrastructure and payment processing.',
 			image: '/strukt.png',
-			tags: ['Next.js', 'TS', 'Github Actions', 'AWS', 'Stripe'],
+			tags: ['Next.js', 'TS', 'Github Actions', 'AWS'],
 			link: 'https://strukt.io'
 		},
 		{
@@ -20,33 +22,40 @@
 			description:
 				'Led migration from SSMS to a modern data pipeline, enabling process codification and automated scaling. Transformed XML-based workflows into maintainable, monitored processes.',
 			image: '/datapipeline.png',
-			tags: ['Python', 'PostgreSQL', 'FastAPI', 'Docker']
+			tags: ['Python', 'PostgreSQL', 'FastAPI', 'Microservices', 'Kubernetes']
 		},
 		{
 			title: 'Automated Release Notes',
 			description:
 				'Innovative LLM-powered system that automates release note generation by analyzing git commits, PRs, and ticket data, significantly reducing engineering overhead.',
 			image: '/release-notes.png',
-			tags: ['Python', 'OpenAI', 'GitHub API', 'CI/CD']
+			tags: ['Python', 'OpenAI', 'GraphQL', 'Github Actions']
+		},
+		{
+			title: 'Metadata Management System',
+			description:
+				'A system for managing metadata for a large number of files. This is a web application that allows analysts to view and interact with the data warehouse.',
+			image: '/metadata-management.png',
+			tags: ['C#', '.NET', 'Snowflake', 'Sveltekit', 'TailwindCSS']
 		},
 		{
 			title: 'SermonDone',
 			description:
 				'Innovative LLM-powered system that automates release note generation by analyzing git commits, PRs, and ticket data, significantly reducing engineering overhead.',
-			tags: ['Python', 'OpenAI', 'GitHub API', 'CI/CD'],
+			tags: ['Next.js', 'OpenAI', 'Vercel', 'Stripe'],
 			link: 'https://www.sermondone.com/'
 		},
 		{
 			title: 'Exposure Essence',
 			description:
 				'A photography website for a local photographer. This is a complete overhaul of the existing website, with a cleaner design, better user experience, and cleaner galleries',
-			tags: ['Python', 'OpenAI', 'GitHub API', 'CI/CD'],
+			tags: ['Python', 'OpenAI', 'GraphQL', 'Azure'],
 			link: 'https://exposureessence.com'
 		}
 	];
 </script>
 
-<section id="projects" class="py-20">
+<section id="projects" class="py-16">
 	<h2 class="text-secondary-foreground mb-12 text-4xl font-bold">Projects</h2>
 
 	<div class="grid grid-cols-1 gap-8 md:grid-cols-2">
@@ -65,19 +74,25 @@
 					/>
 				{/if} -->
 
-				<div class="flex flex-row gap-5">
-					<h3 class="text-secondary-foreground mb-2 text-xl font-bold">{project.title}</h3>
-					{#if project.link}
-						<a href={project.link} target="_blank" class="text-secondary-foreground my-3 text-lg">
-							<span class="text-secondary-foreground/50"> -></span>
-						</a>
-					{/if}
+				<div class="">
+					<a
+						href={project.link}
+						target="_blank"
+						class="text-secondary-foreground group mb-2 flex flex-row items-center gap-5 text-lg"
+					>
+						<h3 class="text-secondary-foreground text-xl font-bold">{project.title}</h3>
+						{#if project.link}
+							<Arrow
+								class="stroke-accent h-6 w-6 rotate-0 transition-transform duration-300 group-hover:-rotate-45"
+							/>
+						{/if}
+					</a>
 				</div>
 				<p class="text-muted-foreground mb-4">{@html project.description}</p>
 				<div class="flex flex-wrap gap-2">
 					{#each project.tags as tag}
 						<span
-							class="text-secondary-foreground/50 hover:bg-secondary/60 bg-secondary/50 rounded-full px-3 py-1 text-sm"
+							class="text-secondary-foreground/60 bg-accent-foreground/10 rounded-full px-3 py-1 text-sm"
 						>
 							{tag}
 						</span>

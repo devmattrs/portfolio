@@ -1,7 +1,5 @@
 <script lang="ts">
 	import { onMount } from 'svelte';
-	import { fade } from 'svelte/transition';
-	import { cubicOut } from 'svelte/easing';
 	import { tick } from 'svelte';
 
 	let props = $props();
@@ -41,45 +39,33 @@
 	];
 
 	animatePaths();
+
+	onMount(() => {
+		let time = 0;
+
+		const animate = () => {
+			time += 0.005;
+
+			// Calculate gradient positions
+			const x1 = Math.sin(time) * 50 + 50;
+			const x2 = Math.cos(time) * 50 + 50;
+
+			// Apply gradient directly to canvas element
+			canvas.style.background = `linear-gradient(${time * 45}deg, 
+				var(--background) 0%,
+				var(--accent) 50%,
+				var(--background) 100%)`;
+			canvas.style.backgroundSize = '150% 150%';
+			canvas.style.backgroundPosition = `${x1}% ${x2}%`;
+
+			requestAnimationFrame(animate);
+		};
+
+		animate();
+	});
 </script>
 
-<svg
-	id="uuid-8ab95e7a-1764-4095-b83e-2ffbd898077f"
-	data-name="Layer 2"
-	xmlns="http://www.w3.org/2000/svg"
-	viewBox="0 0 1923.33 1083"
-	{...props}
->
-	<g id="uuid-59ab644d-007d-4ee2-ad37-c744f2f70cc1" data-name="Layer 1">
-		{#each paths as { d, transform }}
-			<path
-				{d}
-				fill="#fff"
-				stroke="#000"
-				stroke-miterlimit="10"
-				stroke-width={strokeWidth}
-				{transform}
-			/>
-		{/each}
-		<line
-			x1="1921.51"
-			y1="433.41"
-			x2="1547.21"
-			y2="1082"
-			fill="#fff"
-			stroke="#000"
-			stroke-miterlimit="10"
-			stroke-width={strokeWidth}
-		/>
-		<line
-			x1="1690.07"
-			y1="2"
-			x2="1921.51"
-			y2="511.33"
-			fill="#fff"
-			stroke="#000"
-			stroke-miterlimit="10"
-			stroke-width={strokeWidth}
-		/>
-	</g>
-</svg>
+<canvas
+	bind:this={canvas}
+	class="fixed inset-0 h-screen w-screen transition-colors duration-300 dark:opacity-10"
+></canvas>

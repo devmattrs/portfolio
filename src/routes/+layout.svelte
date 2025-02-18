@@ -11,20 +11,24 @@
 	import '../app.css';
 	import Youtube from '$lib/components/icons/youtube.svelte';
 	import X from '$lib/components/icons/x.svelte';
+	import Background from './components/background.svelte';
+	import Twitch from '$lib/components/icons/twitch.svelte';
 
 	let { children } = $props();
 
 	let theme = $state('dark');
 
 	onMount(() => {
-		const currentTheme = document.documentElement.getAttribute('data-theme');
+		const currentTheme = localStorage.getItem('theme');
 		theme = currentTheme || 'dark';
+		document.documentElement.setAttribute('data-theme', theme);
 	});
 
 	const toggleTheme = () => {
 		const currentTheme = document.documentElement.getAttribute('data-theme');
 		const newTheme = currentTheme === 'dark' ? 'light' : 'dark';
 		document.documentElement.setAttribute('data-theme', newTheme);
+		localStorage.setItem('theme', newTheme);
 		theme = newTheme;
 	};
 
@@ -46,6 +50,30 @@
 			}
 		});
 	});
+
+	let socials = $derived([
+		{
+			icon: theme === 'dark' ? Moon : Sun,
+			action: toggleTheme,
+			label: 'Toggle theme',
+			current: () => theme === 'dark'
+		},
+		{
+			icon: Youtube,
+			href: 'https://youtube.com/@devmattrs',
+			label: 'YouTube'
+		},
+		{
+			icon: X,
+			href: 'https://x.com/devmattrs',
+			label: 'X (Twitter)'
+		},
+		{
+			icon: Twitch,
+			href: 'https://www.twitch.tv/devmattrs',
+			label: 'Twitch'
+		}
+	]);
 </script>
 
 <svelte:head>
@@ -53,20 +81,20 @@
 	<meta name="description" content="Full Stack Engineer and Developer portfolio" />
 </svelte:head>
 
-<div class="fixed top-8 right-8 z-20">
-	<Button class="rounded-xl p-2" onclick={toggleTheme}>
-		{#if theme === 'light'}
-			<Sun class="h-6 w-6" />
-		{:else}
-			<Moon class="h-6 w-6" />
-		{/if}
-	</Button>
-	<Button class="rounded-xl p-2">
-		<Youtube class="h-6 w-6" />
-	</Button>
-	<Button class="rounded-xl p-2">
-		<X class="h-5 w-5" />
-	</Button>
+<Background />
+<div class=" top-8 left-8 z-20 mx-auto flex h-fit max-w-3xl gap-3 p-2 px-8 py-8 md:bottom-8">
+	{#each socials as social}
+		<a
+			href={social.href}
+			target="_blank"
+			rel="noopener noreferrer"
+			class="group relative transition-all duration-300 hover:scale-110"
+		>
+			<Button onclick={social.action ?? (() => {})} class="hover:bg-secondary/80 rounded-xl p-2">
+				<social.icon class="h-5 w-5 transition-transform duration-300 group-hover:rotate-12" />
+			</Button>
+		</a>
+	{/each}
 </div>
 
 {@render children()}

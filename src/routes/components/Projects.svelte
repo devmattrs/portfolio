@@ -3,7 +3,7 @@
 
 	const projects = [
 		{
-			title: 'Strukt Chat Application',
+			title: 'Strukt Chat',
 			description:
 				'A proof-of-concept chat application leveraging RAG (Retrieval-Augmented Generation) with Neo4j knowledge graph and OpenAI integration. Features OAuth2 authentication and intelligent query processing.',
 			image: '/strukt-chat.png',

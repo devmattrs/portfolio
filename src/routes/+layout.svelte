@@ -82,7 +82,7 @@
 </svelte:head>
 
 <Background />
-<div class=" top-8 left-8 z-20 mx-auto flex h-fit max-w-3xl gap-3 p-2 px-8 py-8 md:bottom-8">
+<div class=" top-8 left-8 z-10 mx-auto flex h-fit max-w-3xl gap-3 p-2 px-8 py-8 md:bottom-8">
 	{#each socials as social}
 		<a
 			href={social.href}

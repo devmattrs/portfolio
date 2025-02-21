@@ -44,7 +44,7 @@
 		let time = 0;
 
 		const animate = () => {
-			time += 0.005;
+			time += 0.002;
 
 			// Calculate gradient positions
 			const x1 = Math.sin(time) * 50 + 50;
@@ -67,5 +67,5 @@
 
 <canvas
 	bind:this={canvas}
-	class="fixed inset-0 -z-10 h-screen w-screen transition-colors duration-300 dark:opacity-10"
+	class="fixed inset-0 h-screen w-screen opacity-100 transition-colors duration-300 dark:opacity-15"
 ></canvas>

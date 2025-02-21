@@ -22,6 +22,7 @@ export const getPost = async (path: string) => {
 	const [, resolver] = Object.entries(posts).find(([key]) => key.includes(path))!;
 	const { metadata, default: content } = await resolver() as { metadata: Record<string, unknown>, default: string };
 
+	console.log("Content", content);
 	return {
 		meta: metadata,
 		path: path,

@@ -10,7 +10,7 @@
 			tags: ['Next.js', 'Neo4j', 'OpenAI', 'FastAPI', 'OAuth2']
 		},
 		{
-			title: 'Strukt Marketing',
+			title: 'Strukt Landing',
 			description:
 				'A comprehensive web application platform featuring automated deployments, invoicing, and custom mailing solutions. Built with enterprise-grade infrastructure and payment processing.',
 			image: '/strukt.png',
@@ -49,7 +49,7 @@
 			title: 'Exposure Essence',
 			description:
 				'A photography website for a local photographer. This is a complete overhaul of the existing website, with a cleaner design, better user experience, and cleaner galleries',
-			tags: ['Python', 'OpenAI', 'GraphQL', 'Azure'],
+			tags: ['Sveltekit', 'TailwindCSS', 'AWS', 'S3'],
 			link: 'https://exposureessence.com'
 		}
 	];

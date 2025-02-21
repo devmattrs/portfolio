@@ -16,7 +16,7 @@
 		<h1 class="text-secondary-foreground mb-6 text-5xl font-bold md:text-7xl">Matt Schroder</h1>
 
 		<p class="text-muted-foreground mb-8 max-w-2xl text-xl md:text-2xl">
-			Fail fast, fail often, fail forward
+			Learn fast, learn often, fail forward
 		</p>
 		<div class="flex gap-4">
 			<a href="mailto:matt@strukt.io">
@@ -28,7 +28,7 @@
 			</a>
 			<a href="#projects" onclick={(e) => scrollTo(e, '#projects')}>
 				<button
-					class="group border-accent text-accent-foreground flex cursor-pointer items-center gap-2 rounded-lg px-3 py-2 shadow-xs"
+					class="group border-accent text-accent-foreground flex cursor-pointer items-center gap-2 rounded-lg px-3 py-2"
 				>
 					Projects
 					<Arrow
@@ -36,7 +36,7 @@
 					/>
 				</button>
 			</a>
-			<a href="#blog" onclick={(e) => scrollTo(e, '#blog')}>
+			<!-- <a href="#blog" onclick={(e) => scrollTo(e, '#blog')}>
 				<button
 					class="group border-accent text-accent-foreground flex cursor-pointer items-center gap-2 rounded-lg px-3 py-2 shadow-xs"
 				>
@@ -45,7 +45,7 @@
 						class="stroke-accent-foreground h-5 w-5 rotate-0 transition-transform duration-300 group-hover:-rotate-45"
 					/>
 				</button>
-			</a>
+			</a> -->
 		</div>
 	</section>
 </div>

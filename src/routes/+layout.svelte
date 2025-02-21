@@ -58,21 +58,21 @@
 			label: 'Toggle theme',
 			current: () => theme === 'dark'
 		},
-		{
-			icon: Youtube,
-			href: 'https://youtube.com/@devmattrs',
-			label: 'YouTube'
-		},
+		// {
+		// 	icon: Youtube,
+		// 	href: 'https://youtube.com/@devmattrs',
+		// 	label: 'YouTube'
+		// },
 		{
 			icon: X,
 			href: 'https://x.com/devmattrs',
 			label: 'X (Twitter)'
-		},
-		{
-			icon: Twitch,
-			href: 'https://www.twitch.tv/devmattrs',
-			label: 'Twitch'
 		}
+		// {
+		// 	icon: Twitch,
+		// 	href: 'https://www.twitch.tv/devmattrs',
+		// 	label: 'Twitch'
+		// }
 	]);
 </script>
 

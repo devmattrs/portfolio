@@ -1,6 +1,6 @@
 <script lang="ts">
 	import Hero from './components/hero.svelte';
-	import Projects from './components/projects.svelte';
+	import Projects from './components/Projects.svelte';
 	import Skills from './components/skills.svelte';
 </script>
 

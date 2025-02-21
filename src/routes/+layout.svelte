@@ -81,23 +81,25 @@
 	<meta name="description" content="Full Stack Engineer and Developer portfolio" />
 </svelte:head>
 
-<Background />
-<div class=" top-8 left-8 z-10 mx-auto flex h-fit max-w-3xl gap-3 p-2 px-8 py-8 md:bottom-8">
-	{#each socials as social}
-		<a
-			href={social.href}
-			target="_blank"
-			rel="noopener noreferrer"
-			class="group relative transition-all duration-300 hover:scale-110"
-		>
-			<Button
-				onclick={social.action ?? (() => {})}
-				class="hover:bg-accent/10 text-accent-foreground rounded-xl p-2"
+<div class="bg-background">
+	<Background />
+	<div class=" top-8 left-8 z-10 mx-auto flex h-fit max-w-3xl gap-3 p-2 px-8 py-8 md:bottom-8">
+		{#each socials as social}
+			<a
+				href={social.href}
+				target="_blank"
+				rel="noopener noreferrer"
+				class="group relative transition-all duration-300 hover:scale-110"
 			>
-				<social.icon class="h-5 w-5 transition-transform duration-300 group-hover:rotate-12" />
-			</Button>
-		</a>
-	{/each}
-</div>
+				<Button
+					onclick={social.action ?? (() => {})}
+					class="hover:bg-accent/10 text-accent-foreground rounded-xl p-2"
+				>
+					<social.icon class="h-5 w-5 transition-transform duration-300 group-hover:rotate-12" />
+				</Button>
+			</a>
+		{/each}
+	</div>
 
-{@render children()}
+	{@render children()}
+</div>

@@ -13,6 +13,7 @@
 	import X from '$lib/components/icons/x.svelte';
 	import Background from './components/background.svelte';
 	import Twitch from '$lib/components/icons/twitch.svelte';
+	import Github from '$lib/components/icons/github.svelte';
 
 	let { children } = $props();
 
@@ -67,6 +68,11 @@
 			icon: X,
 			href: 'https://x.com/devmattrs',
 			label: 'X (Twitter)'
+		},
+		{
+			icon: Github,
+			href: 'https://github.com/devmattrs',
+			label: 'Github'
 		}
 		// {
 		// 	icon: Twitch,

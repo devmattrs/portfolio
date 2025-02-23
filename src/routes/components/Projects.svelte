@@ -3,11 +3,11 @@
 
 	const projects = [
 		{
-			title: 'Strukt Chat',
+			title: 'Strukt Chat (WIP)',
 			description:
-				'A proof-of-concept chat application leveraging RAG (Retrieval-Augmented Generation) with Neo4j knowledge graph and OpenAI integration. Features OAuth2 authentication and intelligent query processing.',
+				'Chat application leveraging RAG (Retrieval-Augmented Generation) with Neo4j knowledge graph and OpenAI integration. Features OAuth2 authentication and intelligent query processing.',
 			image: '/strukt-chat.png',
-			tags: ['Next.js', 'Neo4j', 'OpenAI', 'FastAPI', 'OAuth2']
+			tags: ['Next.js', 'Neo4j', 'LLMs', 'FastAPI', 'OAuth2', 'GraphQL']
 		},
 		{
 			title: 'Strukt Landing',

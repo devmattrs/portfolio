@@ -14,6 +14,7 @@
 	import Background from './components/background.svelte';
 	import Twitch from '$lib/components/icons/twitch.svelte';
 	import Github from '$lib/components/icons/github.svelte';
+	import LinkedIn from '$lib/components/icons/linkedin.svelte';
 
 	let { children } = $props();
 
@@ -73,6 +74,11 @@
 			icon: Github,
 			href: 'https://github.com/devmattrs',
 			label: 'Github'
+		},
+		{
+			icon: LinkedIn,
+			href: 'https://www.linkedin.com/in/matthew-schroder',
+			label: 'LinkedIn'
 		}
 		// {
 		// 	icon: Twitch,

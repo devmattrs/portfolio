@@ -42,15 +42,22 @@
 			title: 'SermonDone',
 			description:
 				'Innovative LLM-powered system that automates release note generation by analyzing git commits, PRs, and ticket data, significantly reducing engineering overhead.',
-			tags: ['Next.js', 'OpenAI', 'Vercel', 'Stripe'],
+			tags: ['Next.js', 'OpenAI', 'Stripe', 'RAG'],
 			link: 'https://www.sermondone.com/'
 		},
 		{
 			title: 'Exposure Essence',
 			description:
 				'A photography website for a local photographer. This is a complete overhaul of the existing website, with a cleaner design, better user experience, and cleaner galleries',
-			tags: ['Sveltekit', 'TailwindCSS', 'AWS', 'S3'],
+			tags: ['Nextjs', 'TailwindCSS', 'CMS', 'S3'],
 			link: 'https://exposureessence.com'
+		},
+		{
+			title: 'Spiritual Gifts Test AI (WIP)',
+			description:
+				'A spiritual gift test and DISC assessment platform geared towards churches. It allows users to collect a change in their gifts and personailty and allows church admins to see their congregation grow.',
+			tags: ['Nextjs', 'TailwindCSS', 'OpenAI', 'Stripe'],
+			link: 'https://www.spiritualgiftstest.ai'
 		}
 	];
 </script>
